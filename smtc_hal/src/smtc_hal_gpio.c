@@ -4,6 +4,8 @@
 #include "nrf_drv_gpiote.h"
 #include "smtc_hal_gpio.h"
 #include "smtc_hal_config.h"
+#include "smtc_hal_mcu.h"
+#include "nrf_nvic.h"
 
 static hal_gpio_irq_t const* gpio_irq[GPIO_IRQ_MAX];
 
