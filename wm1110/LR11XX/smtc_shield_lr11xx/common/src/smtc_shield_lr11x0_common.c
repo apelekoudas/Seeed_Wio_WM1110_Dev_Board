@@ -134,10 +134,10 @@ void smtc_shield_lr11xx_init_lna_scan( void )
     hal_gpio_init_out( RADIO_LNA_CTRL, HAL_GPIO_RESET );
 }
 
-void smtc_shield_lr11xx_deinit_lna_scan( void )
-{
-    hal_gpio_deinit( RADIO_LNA_CTRL );
-}
+//void smtc_shield_lr11xx_deinit_lna_scan( void )
+//{
+//    hal_gpio_deinit( RADIO_LNA_CTRL );
+//}
 
 void smtc_shield_lr11xx_set_lna_scan( void )
 {

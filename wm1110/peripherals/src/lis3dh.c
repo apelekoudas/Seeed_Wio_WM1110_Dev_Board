@@ -230,7 +230,7 @@ void LIS3dCloseTemp( )
                       LIS3DHTR_REG_TEMP_TEMP_EN_DISABLED;
 
     writeRegister( LIS3DHTR_REG_TEMP_CFG, config5 );
-    delay( LIS3DHTR_CONVERSIONDELAY );
+    hal_mcu_wait_ms( LIS3DHTR_CONVERSIONDELAY );
 }
 
 uint16_t LIS3dReadbitADC1( void )

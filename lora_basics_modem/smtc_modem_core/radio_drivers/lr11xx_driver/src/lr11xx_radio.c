@@ -348,14 +348,14 @@ lr11xx_status_t lr11xx_radio_set_gfsk_sync_word( const void*   context,
 }
 
 #ifndef LR11XX_DISABLE_WARNINGS
-#warning \
-    "The function lr11xx_radio_set_lora_sync_word replaces the \
-deprecated function lr11xx_radio_set_lora_public_network. \
-lr11xx_radio_set_lora_sync_word, however, is incompatible \
-with chip firmware versions prior to 0x303. For those legacy chips \
-only, please use lr11xx_radio_set_lora_public_network. \
-To deactivate this warning, define C preprocessor symbol \
-LR11XX_DISABLE_WARNINGS."
+//#warning \
+//    "The function lr11xx_radio_set_lora_sync_word replaces the \
+//deprecated function lr11xx_radio_set_lora_public_network. \
+//lr11xx_radio_set_lora_sync_word, however, is incompatible \
+//with chip firmware versions prior to 0x303. For those legacy chips \
+//only, please use lr11xx_radio_set_lora_public_network. \
+//To deactivate this warning, define C preprocessor symbol \
+//LR11XX_DISABLE_WARNINGS."
 #endif
 lr11xx_status_t lr11xx_radio_set_lora_sync_word( const void* context, const uint8_t sync_word )
 {
@@ -368,17 +368,17 @@ lr11xx_status_t lr11xx_radio_set_lora_sync_word( const void* context, const uint
     return ( lr11xx_status_t ) lr11xx_hal_write( context, cbuffer, LR11XX_RADIO_SET_LORA_SYNC_WORD_CMD_LENGTH, 0, 0 );
 }
 
-lr11xx_status_t lr11xx_radio_set_lora_public_network( const void*                            context,
-                                                      const lr11xx_radio_lora_network_type_t network_type )
-{
-    const uint8_t cbuffer[LR11XX_RADIO_SET_LORA_PUBLIC_NETWORK_CMD_LENGTH] = {
-        ( uint8_t ) ( LR11XX_RADIO_SET_LORA_PUBLIC_NETWORK_OC >> 8 ),
-        ( uint8_t ) ( LR11XX_RADIO_SET_LORA_PUBLIC_NETWORK_OC >> 0 ),
-        ( uint8_t ) network_type,
-    };
-
-    return ( lr11xx_status_t ) lr11xx_hal_write( context, cbuffer, LR11XX_RADIO_SET_LORA_SYNC_WORD_CMD_LENGTH, 0, 0 );
-}
+//lr11xx_status_t lr11xx_radio_set_lora_public_network( const void*                            context,
+//                                                      const lr11xx_radio_lora_network_type_t network_type )
+//{
+//    const uint8_t cbuffer[LR11XX_RADIO_SET_LORA_PUBLIC_NETWORK_CMD_LENGTH] = {
+//        ( uint8_t ) ( LR11XX_RADIO_SET_LORA_PUBLIC_NETWORK_OC >> 8 ),
+//        ( uint8_t ) ( LR11XX_RADIO_SET_LORA_PUBLIC_NETWORK_OC >> 0 ),
+//        ( uint8_t ) network_type,
+//    };
+//
+//    return ( lr11xx_status_t ) lr11xx_hal_write( context, cbuffer, LR11XX_RADIO_SET_LORA_SYNC_WORD_CMD_LENGTH, 0, 0 );
+//}
 
 lr11xx_status_t lr11xx_radio_set_rx( const void* context, const uint32_t timeout_in_ms )
 {

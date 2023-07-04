@@ -2,6 +2,7 @@
 #include "nrfx_spim.h"
 #include "smtc_hal_spi.h"
 #include "smtc_hal_config.h"
+#include <string.h>
 
 static const nrfx_spim_t spi = NRFX_SPIM_INSTANCE( 3 );
 static uint8_t m_tx_buf[256] = { 0 };
@@ -47,13 +48,13 @@ void hal_spi_write( const uint8_t* buffer, uint16_t length )
     }
 }
 
-void hal_spi_read( uint8_t* buffer, uint16_t length )
-{
-    if( spi_init == true )
-    {
-        system_spi_write_read( buffer, buffer, length );
-    }
-}
+//void hal_spi_read( uint8_t* buffer, uint16_t length )
+//{
+//    if( spi_init == true )
+//    {
+//        system_spi_write_read( buffer, buffer, length );
+//    }
+//}
 
 void hal_spi_write_read( const uint8_t* cbuffer, uint8_t* rbuffer, uint16_t length )
 {

@@ -99,7 +99,7 @@ static hal_lp_timer_irq_t lptim_tmr_irq = { .context = NULL, .callback = NULL };
 static bool lp_timer_init = false;
 static uint32_t lp_timer_old_slot = 0;
 
-static void timer_event_handler( nrf_timer_event_t event_type, void* p_context)
+static void timer_event_handler( nrfx_rtc_int_type_t init_type)
 {
     // hal_lp_timer_stop( );
     // hal_lp_timer_deinit( );

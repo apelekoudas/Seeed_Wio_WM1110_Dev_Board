@@ -44,6 +44,7 @@
 #include "smtc_hal_gpio.h"
 #include "smtc_hal_spi.h"
 #include "smtc_hal_mcu.h"
+#include <stdio.h>
 
 #include "lr11xx_hal_context.h"
 

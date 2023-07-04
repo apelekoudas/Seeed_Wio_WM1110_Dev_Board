@@ -4,12 +4,14 @@
 #include "smtc_hal.h"
 #include "nrf_pwr_mgmt.h"
 #include "smtc_hal_rtc.h"
+#include <stdlib.h>
 
 #include <stdarg.h>
 #include <string.h>
 #include <stdio.h>
 
 #include "hardfault.h"
+#include "nrf_drv_clock.h"
 
 void hal_clock_init(void)
 {

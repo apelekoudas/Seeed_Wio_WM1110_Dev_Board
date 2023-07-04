@@ -7,6 +7,7 @@
 #include "smtc_hal_uart.h"
 #include "smtc_hal_config.h"
 #include "smtc_hal_gpio.h"
+#include "smtc_hal_mcu.h"
 
 static void uart0_handleEvent( app_uart_evt_t *pEvent );
 static void uart1_handleEvent( app_uart_evt_t *pEvent );
@@ -156,7 +157,7 @@ void hal_uart_tx( uint8_t *buff, uint16_t len )
         //     app_uart_put( &uart1, buff[i] );
         //     hal_mcu_wait_us( 15 );
         // }
-        nrf_drv_uart_tx( &uart1, buff, len );
+        nrf_drv_uart_tx( (nrf_drv_uart_t const *)(&uart1), buff, len );
         hal_mcu_wait_us( len * 10 );
     }
 }
